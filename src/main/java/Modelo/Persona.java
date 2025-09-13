@@ -13,11 +13,16 @@ public class Persona {
         return new Persona(nombre, apellido, DNI, edad, altura, peso);
     }
 
-    public Persona(String nombre, String apellido, String DNI, int edad, double altura, int peso) throws PersonaExceptionNombre {
+    public Persona(String nombre, String apellido, String DNI, int edad, double altura, int peso) {
 
 
         if(nombre.isBlank() || nombre==null){
             throw new PersonaExceptionNombre("El nombre no puede ser nulo ni vacio");
+
+
+        }
+        if(edad<18 || edad>=80){
+            throw new PersonaExceptionEdad("La edad es invalida");
 
         }
 

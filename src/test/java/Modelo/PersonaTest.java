@@ -18,15 +18,18 @@ public class PersonaTest {
     @Test
     public void create_nombreVacioONulo_execption(){
 
-        Persona nuevaPersona= Persona.create("Agustin","Gomez","43611353",21,1.70,100);
-
         Assertions.assertThrows(PersonaExceptionNombre.class, ()->Persona.create(" ","Gomez","43611353",21,1.70,90));
 
 
+    }
+    @Test
+    public void create_EdadIncorrecta(){
 
-       // Assertions.assertThrows(PersonaExceptionNombre.class,()->Persona.create(null,"Gomez","43611353",24,1.70,90));
+
+        Assertions.assertThrows(PersonaExceptionEdad.class, ()->Persona.create("Agustin","Gomez","43611353",91,1.40,93));
 
     }
+
 
 
 }
