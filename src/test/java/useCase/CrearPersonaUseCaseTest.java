@@ -24,7 +24,7 @@ public class CrearPersonaUseCaseTest {
     GuardarPersonaRepositorio repositorio;
 
     @Test
-    public void CrearPersona_Sucess(){
+    public void CrearPersona_Success(){
 
         CrearPersonaInput useCase=new CrearPersonaUseCase(repositorio);
 
@@ -57,7 +57,7 @@ public class CrearPersonaUseCaseTest {
         verify(repositorio,never()).guardar(any());
 
 
-        Assertions.assertThrows(RuntimeException.class,()->useCase.create("","gomez","43611353", LocalDate.of(2002,6,2),1.60,90)) ;
+        Assertions.assertThrows(RuntimeException.class,()->useCase.create("","","43611353", LocalDate.of(2002,6,2),1.60,90)) ;
 
     }
 
