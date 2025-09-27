@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 public class Persona {
     private String nombre;
@@ -24,7 +23,14 @@ public class Persona {
 
         }
 
-        int edad= Period.between(fechaNacimiento,fechaActual).getYears();
+        int edad= fechaActual.getYear()-fechaNacimiento.getYear();
+
+        if(fechaActual.getMonthValue()< fechaNacimiento.getMonthValue()|| (fechaActual.getMonthValue()== fechaNacimiento.getMonthValue() && fechaActual.getDayOfMonth()<fechaNacimiento.getDayOfMonth())){
+            edad--;
+
+        }
+
+
 
         if(edad<18){
 
